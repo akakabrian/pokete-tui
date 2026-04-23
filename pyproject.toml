@@ -1,0 +1,26 @@
+[project]
+name = "pokete-tui"
+version = "0.1.0"
+description = "Textual re-shell over lxgr-linux/pokete"
+requires-python = ">=3.12"
+dependencies = [
+    # Textual 0.80 is the floor we target; upstream pokete-tui QA uses
+    # 0.85+. Major cap just in case the render contract shifts.
+    "textual>=0.80,<10",
+    # Agent REST API — shares Textual's asyncio loop.
+    "aiohttp>=3.9,<4",
+    # Pokete itself pulls scrap_engine; install it explicitly so our
+    # engine module can monkey-patch it before the pokete import chain
+    # resolves.
+    "scrap_engine>=1.5.1",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["pokete_tui"]
+
+[tool.setuptools.package-data]
+pokete_tui = ["tui.tcss"]
