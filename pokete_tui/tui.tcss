@@ -1,0 +1,22 @@
+/* Global Textual stylesheet for pokete-tui. */
+
+Screen {
+    background: $background;
+}
+
+#body {
+    height: 1fr;
+}
+
+#map {
+    width: 1fr;
+    height: 100%;
+}
+
+Header {
+    background: $primary-darken-2;
+}
+
+Footer {
+    background: $primary-darken-2;
+}

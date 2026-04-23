@@ -16,7 +16,7 @@ venv: .venv/bin/python
 	.venv/bin/pip install -e $(ENGINE)
 
 run: venv
-	.venv/bin/python pokete.py
+	.venv/bin/python run_pokete.py
 
 smoke: venv
 	.venv/bin/python -m tests.smoke_engine
